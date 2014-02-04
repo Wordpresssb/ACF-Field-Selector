@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Advanced Custom Fields: Field Selector
-Plugin URI: http://github.com
+Plugin URI: https://github.com/danielpataki/acf-field_selector_field
 Description: A field which allows you to select other custom fields
 Version: 1.0.0
 Author: Daniel Pataki

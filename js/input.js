@@ -295,5 +295,12 @@
 
 	});
 
+	$(document).on( 'click', '.acf-tab-button', function() {
+		$.each( $( '.acf_postbox .field .acffs-autocomplete-container' ), function() {
+			$(this).find('.acffs-autocomplete-right .acffs-autocomplete-list').height( $(this).find('.acffs-autocomplete-left').height() - 1 )
+		})
+	})
+
+
 
 })(jQuery);

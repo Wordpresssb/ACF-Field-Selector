@@ -349,7 +349,7 @@ class acf_field_field_selector extends acf_field
 						<?php
 							if( !empty( $fields ) ) :
 								foreach( $fields as $customfield ) :
-								$hidden = ( !empty( $field['value'] ) && in_array( $customfield['field']['key'], $field['value'] ) ) ? 'class="hide"' : '';
+								$hidden = ( !empty( $field['value'] ) && is_array( $field['value'] ) && in_array( $customfield['field']['key'], $field['value'] ) ) ? 'class="hide"' : '';
 							?>
 						<li <?php echo $hidden ?>>
 							<a href="#" data-name="<?php echo $customfield['field']['label'] ?> <?php echo $customfield['group'] ?>" data-value="<?php echo $customfield['field']['key'] ?>"><?php echo $customfield['field']['label'] ?> <span class='additional-data'><?php echo $customfield['group'] ?></span> <span class="acf-button-add"></span></a>
@@ -364,7 +364,7 @@ class acf_field_field_selector extends acf_field
 				<div class="acffs-autocomplete-right">
 					<ul class="bl acffs-autocomplete-list">
 					<?php
-					if( !empty( $field['value'] ) )
+					if( !empty( $field['value'] ) && is_array( $field['value'] ) )
 					{
 						foreach( $field['value'] as $value )
 						{

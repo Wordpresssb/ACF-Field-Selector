@@ -22,9 +22,9 @@ class acf_field_field_selector extends acf_field
 		$this->label = __('Field Selector', 'acf');
 		$this->category = __("Relational",'acf'); // Basic, Content, Choice, etc
 		$this->defaults = array(
-			'allowed_groups'     => '',
-			'allowed_types'      => '',
-			'exclude_types'      => '',
+			'allowed_groups'     => array(),
+			'allowed_types'      => array(),
+			'exclude_types'      => array(),
 			'max'                => '',
 			'return_value'       => 'key',
 			'field_type'         => 'autocomplete',

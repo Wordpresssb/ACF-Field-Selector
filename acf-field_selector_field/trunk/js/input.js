@@ -107,6 +107,61 @@
 
 				initialize_field( $(this) );
 
+				var $this = $(this);
+
+    			$(this).find('.selected.field').sortable({
+					axis: 'y',
+					containerment: 'parent',
+					cursor: 'move',
+					items: 'li',
+					helper: 'clone',
+					placeholder: 'sortable-placeholder',
+					forcePlaceholderSize: true,
+					opacity: 0.5,
+					revert: 100,
+					stop: function() {
+						sort_selected( $this );
+					}
+
+				});
+    			$(this).find('.selected').disableSelection();
+
+
+				$( document ).on( 'click', '.multiselector .selectable li', function() {
+					var $multiselector = $(this).parents( '.multiselector' );
+					var $selected = $multiselector.find( '.selected ul' );
+					var $selectable = $multiselector.find( '.selectable ul' );
+					var $input_field = $multiselector.find( '#field-value' );
+					var key = $(this).data('key');
+
+					add_to_list_ui( $(this), $selected, $selectable );
+					add_to_selected_list( key, $input_field );
+				})
+
+				$( document ).on( 'click', '.multiselector .selected li', function() {
+					var $multiselector = $(this).parents( '.multiselector' );
+					var $selectable = $multiselector.find( '.selectable ul' );
+					var $selected = $multiselector.find( '.selected ul' );
+					var $input_field = $multiselector.find( '#field-value' );
+					var key = $(this).data('key');
+
+					add_to_list_ui( $(this), $selectable, $selected );
+					order_list( $selectable );
+					remove_from_selected_list( key, $input_field );
+				})
+
+				$( document ).on( 'keyup', '.multiselector #field-search', function() {
+					var query = $(this).val();
+					var $multiselector = $(this).parents( '.multiselector' );
+					var $selectable = $multiselector.find( '.selectable ul' );
+
+					var $search_elements = get_field_search_elements( query, $selectable );
+
+					$selectable.find('li').hide();
+					$search_elements.show();
+
+				})
+
 
 
 			});

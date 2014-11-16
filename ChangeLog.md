@@ -1,3 +1,6 @@
+# 3.0.1
+- Made sure search is case-insensitive
+
 # 3.0
 - Complete rewrite with custom controls
 

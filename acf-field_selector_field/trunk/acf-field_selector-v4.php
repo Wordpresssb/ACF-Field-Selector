@@ -36,7 +36,7 @@ class acf_field_field_selector extends acf_field {
 			'dir' => apply_filters('acf/helpers/get_dir', __FILE__),
 			'version' => '1.0.0'
 		);
-
+		
 		add_filter( 'acffsf/item_filters', array( 'acf_field_field_selector_common', 'type_filter' ), 10, 2 );
 		add_filter( 'acffsf/item_filters', array( 'acf_field_field_selector_common', 'group_filter' ), 10, 2 );
 
@@ -213,6 +213,7 @@ class acf_field_field_selector extends acf_field {
 
 	function input_admin_enqueue_scripts()
 	{
+
 
 		// register ACF scripts
 		wp_register_script( 'acf-input-field_selector', $this->settings['dir'] . 'js/input.js', array('acf-input'), $this->settings['version'] );

@@ -273,6 +273,14 @@ class acf_field_field_selector extends acf_field {
 		return $field;
 	}
 
+	function format_value_for_api( $value, $post_id, $field ) {
+		if( !empty( $value ) ) {
+			$value = json_decode( $value, true );
+		}
+
+		return $value;
+	}
+
 
 	function sort_items_by_label($a, $b) {
 		return strcmp( $a["label"], $b["label"] );

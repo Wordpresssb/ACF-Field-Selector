@@ -1,66 +1,45 @@
-# ACF Field Selector Field
+# ACF - Field Selector
 
 A field for Advanced Custom Fields which allows users to select a list of created custom fields
 
------------------------
+## Description
 
-### Description
+The filed selector field allows the selection of other custom fields. This is useful in situations where you want to give the user powerful display options. You could, for example, allow the user to select which custom fields are displayed in a post.
 
-The filed selector field allows the selection of other custom fields. This is useful if you want to build a form from the custom fields a user has selected for example. When creating the field you have the following options:
+#### Thanks
 
-* Include/Exclude Field Types
-* Include/Exclude Field Groups
+- [Advanced Custom Fields](http://www.advancedcustomfields.com/) for the awesome base plugin.
 
-### Compatibility
+#### Translations
 
-This ACF field type is compatible with:
+The plugin is currently available in English and Hungarian. Please feel free to submit any new languages via a pull request, I'd be mighty thankful.
 
-* ACF 5
-* ACF 4
+#### Useful Links
+
+This Github repository is for the development of this plugin. If you would like to read installation and in-depth usage instructions you might want to look at the WordPress plugin page instead.
+
+- [Plugin Page](https://wordpress.org/plugins/acf-field-selector-field/)
+- [SVN Repository](http://plugins.svn.wordpress.org/acf-field-selector-field/)
+- [ACF Plugin](https://wordpress.org/plugins/advanced-custom-fields/)
+- [ACF Home Page](http://www.advancedcustomfields.com/)
+- [ACF Documentation](http://www.advancedcustomfields.com/resources/)
+- [ACF Field Template](https://github.com/elliotcondon/acf-field-type-template)
+- [ACF on Github](https://github.com/elliotcondon/acf)
 
 
-### Installation
-
-1. Copy the `acf-field_selector_field` folder into your `wp-content/plugins` folder
-2. Activate the Advanced Custom Fields: Field Selector plugin via the plugins admin page
-3. Create a new field via ACF and select the Field Selector type
-4. Please refer to the description for more info regarding the field type settings
-
-### Usage
+# For Developers
 
 For developers I've included a filter which allows you to further filter selected fields. At the moment this filter is used to make sure that included and excluded types and groups are reflected in the selectable list.
 
-```php
-add_filter( 'acffsf/item_filters', 'selectable_item_filter', 10, 2 )
-```
+`add_filter( 'acffsf/item_filters', 'selectable_item_filter', 10, 2 )`
 
 The first parameter is the list of items to modify, the second is the setting field.
 
+# Want To Help?
 
-### Changelog
+If you like the plugin and you like helping others out there are a few things you can do:
 
-= 3.0.2 =
-* Compatibility with 4.1
-
-= 3.0.1 =
-* Made sure search is case-insensitive
-* Made sure value was json decoded when returned to the_field
-
-= 3.0 =
-* Complete rewrite with custom controls
-
-= 2.0 =
-* Added ACF 5 Support
-* Removed ACF 3 Support
-
-= 1.0 =
-* Initial Release.
-
------------------------
-
-* Readme : https://github.com/danielpataki/acf-google_font_selector/blob/master/acf-google_font_selector/trunk/readme.txt
-* WordPress repository: https://wordpress.org/plugins/acf-field-selector-field/
-
------------------------
-
-Special thanks to [Elliot Condon](http://elliotcondon.com) for making the wonderful [ACF plugin](advancedcustomfields.com) in the first place.
+- **[Buy ACF Pro](http://www.advancedcustomfields.com/pro/)**
+- **[Review the plugin](https://wordpress.org/support/view/plugin-reviews/acf-field-selector-field)**
+- **Submit a translation** If you speak another language goodly, you can submit a language file, I'd be mighty thankful! Take a look at the lang directory to see what languages we already have. If a language isn't there create one and submit a pull request. If you have no idea what I'm talking about drop me a line and I'll help you out
+- **[Tip me on Gratipay](https://gratipay.com/danielpataki/)**

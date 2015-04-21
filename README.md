@@ -9,6 +9,7 @@ The filed selector field allows the selection of other custom fields. This is us
 #### Thanks
 
 - [Advanced Custom Fields](http://www.advancedcustomfields.com/) for the awesome base plugin.
+- [Alexei Ryazancev](https://www.iconfinder.com/GlumPix) for the plugin icon
 
 #### Translations
 
